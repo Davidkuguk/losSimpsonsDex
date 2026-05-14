@@ -1,4 +1,5 @@
 <main class="container py-4 py-lg-5">
+  <!-- Cabecera principal con el acceso rapido a la coleccion y al formulario. -->
   <section id="inicio" class="hero-panel rounded shadow p-4 p-lg-5 text-center mb-4">
     <span class="badge text-bg-dark mb-3">SPRINGFIELD DATABASE</span>
     <h1 class="display-5 fw-bold">SimpsonsDex</h1>
@@ -16,6 +17,7 @@
     </div>
   </section>
 
+  <!-- Listado compacto de personajes registrados. -->
   <section id="personajes" class="bg-white rounded shadow p-3 p-md-4 mb-4">
     <div class="text-center mb-4">
       <span class="badge text-bg-dark mb-2">FICHERO DEX</span>
@@ -42,6 +44,7 @@
     }
   </section>
 
+  <!-- Tarjetas principales de la coleccion SimpsonsDex. -->
   <section id="coleccion" class="main-panel rounded shadow p-3 p-md-4 mb-4">
     <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 mb-4">
       <div>
@@ -72,6 +75,7 @@
     }
   </section>
 
+  <!-- Historias decorativas que amplian la ambientacion del proyecto. -->
   <section id="historias" class="bg-white rounded shadow p-3 p-md-4 mb-4">
     <div class="text-center mb-4">
       <span class="badge text-bg-dark mb-2">ARCHIVO DE SPRINGFIELD</span>
@@ -94,6 +98,7 @@
     </div>
   </section>
 
+  <!-- Formulario visual de contacto para sugerir nuevos personajes. -->
   <section id="contacto" class="bg-white rounded shadow p-3 p-md-4">
     <div class="text-center mb-4">
       <span class="badge text-bg-dark mb-2">CENTRAL DEX</span>
@@ -130,6 +135,7 @@
 </main>
 
 @if (isModalOpen()) {
+  <!-- Modal reutilizable para crear un personaje nuevo. -->
   <div class="modal-backdrop-custom" role="presentation" (click)="closeModal()">
     <section
       class="modal-card bg-white rounded shadow p-3 p-md-4"

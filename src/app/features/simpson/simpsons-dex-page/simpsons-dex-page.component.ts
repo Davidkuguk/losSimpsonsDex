@@ -1,10 +1,11 @@
 import { AsyncPipe } from '@angular/common';
 import { Component, signal } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable, of } from 'rxjs';
 
 import { SimpsonCharacter, SimpsonService } from '../../../core/simpson.service';
 import { NuevoPersonajeComponent } from '../nuevo-personaje/nuevo-personaje.component';
 
+// Pequena ficha de historia que se muestra en el archivo de Springfield.
 interface Story {
   badge: string;
   badgeClass: string;
@@ -18,9 +19,13 @@ interface Story {
   templateUrl: './simpsons-dex-page.component.html',
 })
 export class SimpsonsDexPageComponent {
+  // Flujo reactivo con los personajes disponibles en la coleccion.
   protected readonly characters$: Observable<SimpsonCharacter[]>;
+
+  // Controla la apertura y cierre del modal de nuevo personaje.
   protected readonly isModalOpen = signal(false);
 
+  // Historias estaticas para ambientar la pagina.
   protected readonly stories: Story[] = [
     {
       badge: 'Mision 01',
@@ -44,6 +49,9 @@ export class SimpsonsDexPageComponent {
 
   constructor(private readonly simpsonService: SimpsonService) {
     this.characters$ = this.simpsonService.characters$;
+    this.simpsonService.loadCharactersFromApi().pipe(
+      catchError(() => of(this.simpsonService.getCharacters())),
+    ).subscribe();
   }
 
   protected openModal(): void {
@@ -54,6 +62,7 @@ export class SimpsonsDexPageComponent {
     this.isModalOpen.set(false);
   }
 
+  // Evita recrear tarjetas cuando Angular vuelve a pintar la lista.
   protected trackCharacter(_index: number, character: SimpsonCharacter): string {
     return character.name;
   }

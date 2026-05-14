@@ -1,4 +1,5 @@
 :host {
+  /* Estilo base compartido por toda la aplicacion. */
   display: block;
   min-height: 100vh;
   font-family: "Trebuchet MS", Verdana, sans-serif;

@@ -192,3 +192,47 @@ Application bundle generation complete. [0.505 seconds] - 2026-05-14T11:05:36.70
 Page reload sent to client(s).
 [2m13:13:47[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32m✨ new dependencies optimized: [33m@angular/common, @angular/forms, rxjs[32m[39m
 [2m13:13:47[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32m✨ optimized dependencies changed. reloading[39m
+[33m>[39m Changes detected. Rebuilding...
+[32m√[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m        [2m | [22m [1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m         [2m | [22m [36m42.85 kB[39m[2m | [22m
+[32mstyles.css[39m         [2m | [22m[2mstyles[22m       [2m | [22m[36m814 bytes[39m[2m | [22m
+
+[1m [22m                  [2m | [22m[1mInitial total[22m[2m | [22m [1m43.66 kB[22m
+
+Application bundle generation complete. [0.666 seconds] - 2026-05-14T11:30:35.916Z
+
+[33m>[39m Changes detected. Rebuilding...
+[32m√[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m[2m | [22m[1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m [2m | [22m[36m43.68 kB[39m[2m | [22m
+
+Application bundle generation complete. [1.079 seconds] - 2026-05-14T11:32:46.250Z
+
+Page reload sent to client(s).
+[33m>[39m Changes detected. Rebuilding...
+[32m√[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m[2m | [22m[1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m [2m | [22m[36m44.18 kB[39m[2m | [22m
+
+Application bundle generation complete. [0.415 seconds] - 2026-05-14T11:33:00.896Z
+
+Page reload sent to client(s).
+[33m>[39m Changes detected. Rebuilding...
+[32m√[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m[2m | [22m[1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m [2m | [22m[36m44.92 kB[39m[2m | [22m
+
+Application bundle generation complete. [0.604 seconds] - 2026-05-14T11:35:28.977Z
+
+Page reload sent to client(s).
+[2m13:35:31[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32m✨ new dependencies optimized: [33m@angular/common/http[32m[39m
+[2m13:35:31[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32m✨ optimized dependencies changed. reloading[39m
+[33m>[39m Changes detected. Rebuilding...
+[32m√[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m[2m | [22m[1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m [2m | [22m[36m45.80 kB[39m[2m | [22m
+
+Application bundle generation complete. [1.869 seconds] - 2026-05-14T11:50:38.720Z
+
+Page reload sent to client(s).

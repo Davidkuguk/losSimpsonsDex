@@ -4,41 +4,49 @@ body {
   background: #f7d51d;
 }
 
+/* Logo pequeno usado en zonas de marca si se reutiliza el diseno. */
 .brand-logo {
   width: 42px;
   height: 42px;
   object-fit: contain;
 }
 
+/* Paneles principales con fondo claro sobre el amarillo de Springfield. */
 .hero-panel,
 .main-panel {
   background: rgba(255, 255, 255, 0.93);
 }
 
+/* Imagen del heroe: mantiene el logo proporcionado sin deformarlo. */
 .hero-logo {
   max-height: 300px;
   object-fit: contain;
 }
 
+/* Tarjetas de personajes con borde marcado tipo ficha coleccionable. */
 .character-card {
   min-height: 100%;
   border: 4px solid #212529;
 }
 
+/* Imagenes de personaje normalizadas para que todas las tarjetas midan igual. */
 .character-img {
   height: 240px;
   object-fit: contain;
   background: rgba(255, 255, 255, 0.75);
 }
 
+/* Las tarjetas de historias conservan la misma altura dentro de cada fila. */
 .story-card {
   min-height: 100%;
 }
 
+/* Insignia de seccion con separacion extra para efecto arcade. */
 .dex-badge {
   letter-spacing: 1px;
 }
 
+/* Capa oscura que centra el modal y bloquea el contenido del fondo. */
 .modal-backdrop-custom {
   position: fixed;
   inset: 0;
@@ -49,6 +57,7 @@ body {
   background: rgba(0, 0, 0, 0.65);
 }
 
+/* Anchura maxima del formulario modal. */
 .modal-card {
   width: min(100%, 520px);
 }

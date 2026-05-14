@@ -3,3 +3,52 @@ body {
   min-height: 100vh;
   background: #f7d51d;
 }
+
+.brand-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.hero-panel,
+.main-panel {
+  background: rgba(255, 255, 255, 0.93);
+}
+
+.hero-logo {
+  max-height: 300px;
+  object-fit: contain;
+}
+
+.character-card {
+  min-height: 100%;
+  border: 4px solid #212529;
+}
+
+.character-img {
+  height: 240px;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.story-card {
+  min-height: 100%;
+}
+
+.dex-badge {
+  letter-spacing: 1px;
+}
+
+.modal-backdrop-custom {
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.modal-card {
+  width: min(100%, 520px);
+}

@@ -1,0 +1,45 @@
+<form class="row g-3" (ngSubmit)="addCharacter()">
+  <div class="col-12">
+    <label for="newName" class="form-label fw-bold">Nombre del personaje</label>
+    <input
+      id="newName"
+      name="name"
+      type="text"
+      class="form-control"
+      placeholder="Ejemplo: Krusty"
+      [(ngModel)]="character.name"
+      required
+    />
+  </div>
+
+  <div class="col-12">
+    <label for="newCategory" class="form-label fw-bold">Tipo o categoría</label>
+    <input
+      id="newCategory"
+      name="category"
+      type="text"
+      class="form-control"
+      placeholder="Ejemplo: Presentador"
+      [(ngModel)]="character.category"
+      required
+    />
+  </div>
+
+  <div class="col-12">
+    <label for="newHairColor" class="form-label fw-bold">Color de pelo</label>
+    <input
+      id="newHairColor"
+      name="hairColor"
+      type="text"
+      class="form-control"
+      placeholder="Ejemplo: Verde"
+      [(ngModel)]="character.hairColor"
+      required
+    />
+  </div>
+
+  <div class="col-12 d-flex flex-column flex-sm-row justify-content-end gap-2 mt-4">
+    <button type="button" class="btn btn-outline-dark" (click)="cancel()">Cancelar</button>
+    <button type="submit" class="btn btn-dark">Guardar personaje</button>
+  </div>
+</form>

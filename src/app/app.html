@@ -1,166 +1,18 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow">
   <div class="container">
-    <button
-      type="button"
-      class="navbar-brand brand-button d-flex align-items-center gap-2 fw-bold"
-      (click)="showPage('inicio')"
-    >
+    <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#inicio">
       <img src="img/logo.png" alt="Logo SimpsonsDex" class="brand-logo" />
       SimpsonsDex
-    </button>
+    </a>
 
     <div class="navbar-nav flex-row flex-wrap gap-2 ms-md-auto">
-      @for (item of navItems; track item.id) {
-        <button
-          type="button"
-          class="nav-link px-2"
-          [class.active]="activePage() === item.id"
-          [attr.aria-current]="activePage() === item.id ? 'page' : null"
-          (click)="showPage(item.id)"
-        >
-          {{ item.label }}
-        </button>
-      }
+      <a class="nav-link px-2 active" aria-current="page" href="#inicio">Inicio</a>
+      <a class="nav-link px-2" href="#personajes">Personajes</a>
+      <a class="nav-link px-2" href="#historias">Historias</a>
+      <a class="nav-link px-2" href="#coleccion">Coleccion</a>
+      <a class="nav-link px-2" href="#contacto">Contacto</a>
     </div>
   </div>
 </nav>
 
-<main class="container py-4 py-lg-5">
-  @switch (activePage()) {
-    @case ('inicio') {
-      <section class="hero-panel rounded shadow p-4 p-lg-5 text-center">
-        <span class="badge text-bg-dark mb-3">SPRINGFIELD DATABASE</span>
-        <h1 class="display-5 fw-bold">Los SimpsonsDex</h1>
-        <p class="lead mx-auto mb-4">
-          Una enciclopedia coleccionable de personajes de Los Simpsons creada con Angular y Bootstrap.
-        </p>
-
-        <img src="img/logo.png" class="img-fluid hero-logo mb-4" alt="Logo de Los Simpsons" />
-
-        <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
-          <button type="button" class="btn btn-dark btn-lg shadow" (click)="showPage('coleccion')">
-            Ver coleccion
-          </button>
-          <button type="button" class="btn btn-outline-dark btn-lg" (click)="showPage('personajes')">
-            Ver personajes
-          </button>
-        </div>
-      </section>
-    }
-
-    @case ('personajes') {
-      <section class="bg-white rounded shadow p-3 p-md-4">
-        <div class="text-center mb-4">
-          <span class="badge text-bg-dark mb-2">FICHERO DEX</span>
-          <h1 class="fw-bold">Personajes</h1>
-          <p class="lead mb-0">Resumen de categorias y estados de cada personaje.</p>
-        </div>
-
-        <div class="row g-3">
-          @for (character of characters; track character.name) {
-            <div class="col-12 col-md-6">
-              <article class="d-flex align-items-center gap-3 rounded shadow p-3 {{ character.cardClass }}">
-                <img [src]="character.image" class="avatar bg-white rounded p-1" [alt]="character.alt" />
-                <div>
-                  <h2 class="h5 fw-bold mb-1">{{ character.name }}</h2>
-                  <p class="mb-1">Categoria: {{ character.category }}</p>
-                  <span class="badge text-bg-light border border-dark">{{ character.status }}</span>
-                </div>
-              </article>
-            </div>
-          }
-        </div>
-      </section>
-    }
-
-    @case ('historias') {
-      <section class="bg-white rounded shadow p-3 p-md-4">
-        <div class="text-center mb-4">
-          <span class="badge text-bg-dark mb-2">ARCHIVO DE SPRINGFIELD</span>
-          <h1 class="fw-bold">Historias</h1>
-          <p class="lead mb-0">Pequenas misiones y datos para ambientar la SimpsonsDex.</p>
-        </div>
-
-        <div class="row g-4">
-          @for (story of stories; track story.badge) {
-            <div class="col-12 col-md-6 col-lg-4">
-              <article class="card story-card border-dark shadow rounded">
-                <div class="card-body">
-                  <span class="badge mb-2 {{ story.badgeClass }}">{{ story.badge }}</span>
-                  <h2 class="h5 fw-bold">{{ story.title }}</h2>
-                  <p class="mb-0">{{ story.text }}</p>
-                </div>
-              </article>
-            </div>
-          }
-        </div>
-      </section>
-    }
-
-    @case ('coleccion') {
-      <section class="main-panel rounded shadow p-3 p-md-4">
-        <div class="text-center mb-4">
-          <span class="badge text-bg-dark dex-badge mb-2">ENCICLOPEDIA COLECCIONABLE</span>
-          <h1 class="fw-bold mb-2">Coleccion SimpsonsDex</h1>
-          <p class="lead mb-0">Personajes registrados como fichas de videojuego.</p>
-        </div>
-
-        <div class="row g-4">
-          @for (character of characters; track character.name) {
-            <div class="col-12 col-sm-6 col-lg-4">
-              <article class="card character-card shadow rounded text-center {{ character.cardClass }}">
-                <img [src]="character.image" class="card-img-top character-img p-3" [alt]="character.alt" />
-                <div class="card-body">
-                  <h2 class="h4 card-title fw-bold">{{ character.name }}</h2>
-                  <p class="card-text mb-2">{{ character.category }}</p>
-                  <p class="badge text-bg-light border border-dark mb-0">{{ character.status }} en la SimpsonsDex</p>
-                </div>
-              </article>
-            </div>
-          }
-        </div>
-      </section>
-    }
-
-    @case ('contacto') {
-      <section class="bg-white rounded shadow p-3 p-md-4">
-        <div class="text-center mb-4">
-          <span class="badge text-bg-dark mb-2">CENTRAL DEX</span>
-          <h1 class="fw-bold">Contacto</h1>
-          <p class="lead mb-0">Formulario visual para proponer nuevos personajes a la coleccion.</p>
-        </div>
-
-        <form class="row g-3">
-          <div class="col-12 col-md-6">
-            <label for="nombre" class="form-label fw-bold">Nombre</label>
-            <input type="text" class="form-control" id="nombre" placeholder="Tu nombre" />
-          </div>
-
-          <div class="col-12 col-md-6">
-            <label for="email" class="form-label fw-bold">Correo</label>
-            <input type="email" class="form-control" id="email" placeholder="correo@ejemplo.com" />
-          </div>
-
-          <div class="col-12">
-            <label for="personaje" class="form-label fw-bold">Personaje sugerido</label>
-            <input type="text" class="form-control" id="personaje" placeholder="Ejemplo: Krusty" />
-          </div>
-
-          <div class="col-12">
-            <label for="mensaje" class="form-label fw-bold">Mensaje</label>
-            <textarea
-              class="form-control"
-              id="mensaje"
-              rows="4"
-              placeholder="Escribe una breve descripcion"
-            ></textarea>
-          </div>
-
-          <div class="col-12 text-center">
-            <button type="button" class="btn btn-dark btn-lg shadow">Enviar propuesta</button>
-          </div>
-        </form>
-      </section>
-    }
-  }
-</main>
+<app-simpsons-dex-page />

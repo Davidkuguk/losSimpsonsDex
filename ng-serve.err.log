@@ -1,0 +1,163 @@
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2729: Property 'simpsonService' is used before its initialization.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/features/simpson/simpsons-dex-page/simpsons-dex-page.component.ts:20:40:
+[37m      20 │   protected readonly characters$ = this.[32msimpsonService[37m.characters$;
+         ╵                                         [32m~~~~~~~~~~~~~~[0m
+
+  'simpsonService' is declared here.
+
+    src/app/features/simpson/simpsons-dex-page/simpsons-dex-page.component.ts:44:14:
+[37m      44 │   constructor([32mprivate readonly simpsonService: SimpsonService[37m) {
+         ╵               [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[33m[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mNG8113: All imports are unused[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.ts:7:2:
+[37m      7 │   [32mimports[37m: [SimpsonsDexPageComponent],
+        ╵   [32m~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'showPage' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:4:15:
+[37m      4 │       (click)="[32mshowPage[37m('inicio')">
+        ╵                [32m~~~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:8:15:
+[37m      8 │   templateUrl: [32m'./app.html'[37m,
+        ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'navItems' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:12:20:
+[37m      12 │       @for (item of [32mnavItems[37m; track item.id) {
+         ╵                     [32m~~~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:8:15:
+[37m      8 │   templateUrl: [32m'./app.html'[37m,
+        ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'activePage' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:13:66:
+[37m      13 │ ...n" class="nav-link px-2" [class.active]="[32mactivePage[37m() === item.id"
+         ╵                                             [32m~~~~~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:8:15:
+[37m      8 │   templateUrl: [32m'./app.html'[37m,
+        ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'activePage' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:14:29:
+[37m      14 │         [attr.aria-current]="[32mactivePage[37m() === item.id ? 'page' : n...
+         ╵                              [32m~~~~~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:8:15:
+[37m      8 │   templateUrl: [32m'./app.html'[37m,
+        ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'showPage' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:14:80:
+[37m      14 │ ...vePage() === item.id ? 'page' : null" (click)="[32mshowPage[37m(item.id)">
+         ╵                                                   [32m~~~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:8:15:
+[37m      8 │   templateUrl: [32m'./app.html'[37m,
+        ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'activePage' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:26:11:
+[37m      26 │   @switch ([32mactivePage[37m()) {
+         ╵            [32m~~~~~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:8:15:
+[37m      8 │   templateUrl: [32m'./app.html'[37m,
+        ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'showPage' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:38:72:
+[37m      38 │ ...lass="btn btn-dark btn-lg shadow" (click)="[32mshowPage[37m('coleccion')">
+         ╵                                               [32m~~~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:8:15:
+[37m      8 │   templateUrl: [32m'./app.html'[37m,
+        ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'showPage' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:41:73:
+[37m      41 │ ...ss="btn btn-outline-dark btn-lg" (click)="[32mshowPage[37m('personajes')">
+         ╵                                              [32m~~~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:8:15:
+[37m      8 │   templateUrl: [32m'./app.html'[37m,
+        ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'characters' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:57:25:
+[37m      57 │       @for (character of [32mcharacters[37m; track character.name) {
+         ╵                          [32m~~~~~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:8:15:
+[37m      8 │   templateUrl: [32m'./app.html'[37m,
+        ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'stories' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:82:21:
+[37m      82 │       @for (story of [32mstories[37m; track story.badge) {
+         ╵                      [32m~~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:8:15:
+[37m      8 │   templateUrl: [32m'./app.html'[37m,
+        ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'characters' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:106:25:
+[37m      106 │       @for (character of [32mcharacters[37m; track character.name) {
+          ╵                          [32m~~~~~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:8:15:
+[37m      8 │   templateUrl: [32m'./app.html'[37m,
+        ╵                [32m~~~~~~~~~~~~[0m
+
+[39m[22m

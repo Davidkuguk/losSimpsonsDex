@@ -1,0 +1,156 @@
+<main class="container py-4 py-lg-5">
+  <section id="inicio" class="hero-panel rounded shadow p-4 p-lg-5 text-center mb-4">
+    <span class="badge text-bg-dark mb-3">SPRINGFIELD DATABASE</span>
+    <h1 class="display-5 fw-bold">SimpsonsDex</h1>
+    <p class="lead mx-auto mb-4">
+      Enciclopedia coleccionable del universo Los Simpsons con estado reactivo.
+    </p>
+
+    <img src="img/logo.png" class="img-fluid hero-logo mb-4" alt="Logo de Los Simpsons" />
+
+    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+      <button type="button" class="btn btn-dark btn-lg shadow" (click)="openModal()">
+        Anadir personaje
+      </button>
+      <a class="btn btn-outline-dark btn-lg" href="#coleccion">Ver coleccion</a>
+    </div>
+  </section>
+
+  <section id="personajes" class="bg-white rounded shadow p-3 p-md-4 mb-4">
+    <div class="text-center mb-4">
+      <span class="badge text-bg-dark mb-2">FICHERO DEX</span>
+      <h2 class="fw-bold">Personajes</h2>
+      <p class="lead mb-0">Resumen de categorias y estado reactivo de cada personaje.</p>
+    </div>
+
+    @if (characters$ | async; as characters) {
+      <div class="row g-3">
+        @for (character of characters; track trackCharacter($index, character)) {
+          <div class="col-12 col-md-6">
+            <article class="d-flex align-items-center gap-3 rounded shadow p-3 {{ character.cardClass }}">
+              <img [src]="character.image" class="avatar bg-white rounded p-1" [alt]="character.alt" />
+              <div>
+                <h3 class="h5 fw-bold mb-1">{{ character.name }}</h3>
+                <p class="mb-1">Categoria: {{ character.category }}</p>
+                <p class="mb-1">Pelo: {{ character.hairColor }}</p>
+                <span class="badge text-bg-light border border-dark">{{ character.status }}</span>
+              </div>
+            </article>
+          </div>
+        }
+      </div>
+    }
+  </section>
+
+  <section id="coleccion" class="main-panel rounded shadow p-3 p-md-4 mb-4">
+    <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 mb-4">
+      <div>
+        <span class="badge text-bg-dark dex-badge mb-2">ENCICLOPEDIA COLECCIONABLE</span>
+        <h2 class="fw-bold mb-1">Coleccion SimpsonsDex</h2>
+        <p class="lead mb-0">Personajes registrados como fichas de videojuego.</p>
+      </div>
+
+      <button type="button" class="btn btn-dark shadow" (click)="openModal()">Anadir personaje</button>
+    </div>
+
+    @if (characters$ | async; as characters) {
+      <div class="row g-4">
+        @for (character of characters; track trackCharacter($index, character)) {
+          <div class="col-12 col-sm-6 col-lg-4">
+            <article class="card character-card shadow rounded text-center {{ character.cardClass }}">
+              <img [src]="character.image" class="card-img-top character-img p-3" [alt]="character.alt" />
+              <div class="card-body">
+                <h3 class="h4 card-title fw-bold">{{ character.name }}</h3>
+                <p class="card-text mb-1">{{ character.category }}</p>
+                <p class="card-text mb-2">Pelo: {{ character.hairColor }}</p>
+                <p class="badge text-bg-light border border-dark mb-0">{{ character.status }} en la SimpsonsDex</p>
+              </div>
+            </article>
+          </div>
+        }
+      </div>
+    }
+  </section>
+
+  <section id="historias" class="bg-white rounded shadow p-3 p-md-4 mb-4">
+    <div class="text-center mb-4">
+      <span class="badge text-bg-dark mb-2">ARCHIVO DE SPRINGFIELD</span>
+      <h2 class="fw-bold">Historias</h2>
+      <p class="lead mb-0">Pequenas misiones y datos para ambientar la SimpsonsDex.</p>
+    </div>
+
+    <div class="row g-4">
+      @for (story of stories; track story.badge) {
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="card story-card border-dark shadow rounded">
+            <div class="card-body">
+              <span class="badge mb-2 {{ story.badgeClass }}">{{ story.badge }}</span>
+              <h3 class="h5 fw-bold">{{ story.title }}</h3>
+              <p class="mb-0">{{ story.text }}</p>
+            </div>
+          </article>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section id="contacto" class="bg-white rounded shadow p-3 p-md-4">
+    <div class="text-center mb-4">
+      <span class="badge text-bg-dark mb-2">CENTRAL DEX</span>
+      <h2 class="fw-bold">Contacto</h2>
+      <p class="lead mb-0">Formulario visual para proponer nuevos personajes a la coleccion.</p>
+    </div>
+
+    <form class="row g-3">
+      <div class="col-12 col-md-6">
+        <label for="nombre" class="form-label fw-bold">Nombre</label>
+        <input type="text" class="form-control" id="nombre" placeholder="Tu nombre" />
+      </div>
+
+      <div class="col-12 col-md-6">
+        <label for="email" class="form-label fw-bold">Correo</label>
+        <input type="email" class="form-control" id="email" placeholder="correo@ejemplo.com" />
+      </div>
+
+      <div class="col-12">
+        <label for="personaje" class="form-label fw-bold">Personaje sugerido</label>
+        <input type="text" class="form-control" id="personaje" placeholder="Ejemplo: Krusty" />
+      </div>
+
+      <div class="col-12">
+        <label for="mensaje" class="form-label fw-bold">Mensaje</label>
+        <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe una breve descripcion"></textarea>
+      </div>
+
+      <div class="col-12 text-center">
+        <button type="button" class="btn btn-dark btn-lg shadow" (click)="openModal()">Anadir a la SimpsonsDex</button>
+      </div>
+    </form>
+  </section>
+</main>
+
+@if (isModalOpen()) {
+  <div class="modal-backdrop-custom" role="presentation" (click)="closeModal()">
+    <section
+      class="modal-card bg-white rounded shadow p-3 p-md-4"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+      (click)="$event.stopPropagation()"
+    >
+      <div class="d-flex align-items-start justify-content-between gap-3 mb-3">
+        <div>
+          <span class="badge text-bg-dark mb-2">NUEVO REGISTRO</span>
+          <h2 id="modalTitle" class="h4 fw-bold mb-0">Anadir personaje</h2>
+        </div>
+
+        <button type="button" class="btn-close" aria-label="Cerrar" (click)="closeModal()"></button>
+      </div>
+
+      <app-nuevo-personaje
+        (closeModal)="closeModal()"
+        (characterCreated)="closeModal()"
+      />
+    </section>
+  </div>
+}

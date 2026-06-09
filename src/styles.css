@@ -61,3 +61,22 @@ body {
 .modal-card {
   width: min(100%, 520px);
 }
+
+/* Ventana de historia con aire de vineta de comic. */
+.story-vignette {
+  width: min(100%, 720px);
+}
+
+.story-vignette-img {
+  width: min(180px, 55vw);
+  height: 180px;
+  object-fit: contain;
+  background: #f7d51d;
+  border: 3px solid #212529;
+}
+
+.comic-panel {
+  position: relative;
+  flex: 1;
+  background: #fff8d6;
+}

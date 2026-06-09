@@ -62,4 +62,19 @@ describe('SimpsonsDexPageComponent', () => {
     expect(compiled.textContent).toContain('Moe Szyslak');
     expect(compiled.textContent).toContain('Tabernero');
   });
+
+  it('deberia abrir una vineta con la historia del personaje seleccionado', async () => {
+    fixture.detectChanges();
+    await fixture.whenStable();
+
+    const compiled = fixture.nativeElement as HTMLElement;
+    const historyButton = Array.from(compiled.querySelectorAll('button'))
+      .find((button) => button.textContent?.trim() === 'Historia') as HTMLButtonElement | undefined;
+
+    historyButton?.click();
+    fixture.detectChanges();
+
+    expect(compiled.textContent).toContain('Historia de Homer');
+    expect(compiled.textContent).toContain('Homer entra en la SimpsonsDex');
+  });
 });

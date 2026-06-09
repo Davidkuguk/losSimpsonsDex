@@ -91,7 +91,7 @@ describe('SimpsonService', () => {
     expect(service.getCharacters().length).toBe(initialTotal);
   });
 
-  it('deberia recibir personajes desde la API simulada', () => {
+  it('deberia mezclar los personajes base con los recibidos desde la API simulada', () => {
     let receivedCharacters: SimpsonCharacter[] = [];
 
     service.loadCharactersFromApi().subscribe((characters) => {
@@ -102,7 +102,8 @@ describe('SimpsonService', () => {
     expect(request.request.method).toBe('GET');
     request.flush(apiCharacters);
 
-    expect(receivedCharacters).toEqual(apiCharacters);
-    expect(service.getCharacters()).toEqual(apiCharacters);
+    expect(receivedCharacters.some((character) => character.name === 'Homer')).toBe(true);
+    expect(receivedCharacters.some((character) => character.name === 'Ned Flanders')).toBe(true);
+    expect(service.getCharacters()).toEqual(receivedCharacters);
   });
 });

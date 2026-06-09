@@ -25,6 +25,9 @@ export class SimpsonsDexPageComponent {
   // Controla la apertura y cierre del modal de nuevo personaje.
   protected readonly isModalOpen = signal(false);
 
+  // Personaje seleccionado para mostrar su vineta de historia.
+  protected readonly selectedStoryCharacter = signal<SimpsonCharacter | null>(null);
+
   // Historias estaticas para ambientar la pagina.
   protected readonly stories: Story[] = [
     {
@@ -60,6 +63,18 @@ export class SimpsonsDexPageComponent {
 
   protected closeModal(): void {
     this.isModalOpen.set(false);
+  }
+
+  protected openCharacterStory(character: SimpsonCharacter): void {
+    this.selectedStoryCharacter.set(character);
+  }
+
+  protected closeCharacterStory(): void {
+    this.selectedStoryCharacter.set(null);
+  }
+
+  protected getCharacterStory(character: SimpsonCharacter): string {
+    return `${character.name} entra en la SimpsonsDex como ${character.category.toLowerCase()} con pelo ${character.hairColor.toLowerCase()}. Su ficha quedo marcada como "${character.status}" despues de una jornada muy rara en Springfield.`;
   }
 
   // Evita recrear tarjetas cuando Angular vuelve a pintar la lista.

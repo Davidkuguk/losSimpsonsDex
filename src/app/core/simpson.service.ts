@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { BehaviorSubject, map, Observable, tap } from 'rxjs';
 
 import { environment } from '../../environments/environment';
 
@@ -111,6 +111,7 @@ export class SimpsonService {
   // Carga personajes desde la API y actualiza el estado reactivo de la aplicacion.
   loadCharactersFromApi(): Observable<SimpsonCharacter[]> {
     return this.http.get<SimpsonCharacter[]>(this.apiUrl).pipe(
+      map((characters) => this.mergeCharacters(this.initialCharacters, characters)),
       tap((characters) => this.charactersSubject.next(characters)),
     );
   }
@@ -187,6 +188,20 @@ export class SimpsonService {
     }
 
     return 'bg-info';
+  }
+
+  // Mantiene los personajes base y suma los de la API sin repetir nombres.
+  private mergeCharacters(
+    baseCharacters: SimpsonCharacter[],
+    apiCharacters: SimpsonCharacter[],
+  ): SimpsonCharacter[] {
+    const charactersByName = new Map<string, SimpsonCharacter>();
+
+    for (const character of [...baseCharacters, ...apiCharacters]) {
+      charactersByName.set(character.name.trim().toLowerCase(), character);
+    }
+
+    return Array.from(charactersByName.values());
   }
 
   // Rechaza registros incompletos para que no entren fichas vacias en la coleccion.

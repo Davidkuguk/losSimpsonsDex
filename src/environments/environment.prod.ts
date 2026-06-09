@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'https://simpsonsdex-backend.onrender.com',
+  apiBaseUrl: 'https://lossimpsons-backend.onrender.com',
 };
